@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green-1: #00FF00;
+  --green-2: #7CFC00;
+  --green-3: #32CD32;
+  --blue-1: #0000FF;
+  --blue-2: #1E90FF;
+  --blue-3: #4169E1;
+  --purple-1: #800080;
+  --purple-2: #9932CC;
+  --purple-3: #8A2BE2;
+  --yellow-1: #FFFF00;
+  --yellow-2: #FFD700;
+  --yellow-3: #FFDB58;
+  --red-1: #FF0000;
+  --red-2: #FF4500;
+  --red-3: #DC143C;
+  --orange-1: #FFA500;
+  --orange-2: #FF8C00;
+  --orange-3: #FF6347;
+  --cyan-1: #00FFFF;
+  --cyan-2: #00CED1;
+  --cyan-3: #20B2AA;
+  --pink-1: #FF69B4;
+  --pink-2: #FF1493;
+  --pink-3: #C71585;
+  --brown-1: #A52A2A;
+  --brown-2: #8B4513;
+  --brown-3: #D2691E;
+  --grey-1: #808080;
+  --grey-2: #A9A9A9;
+  --grey-3: #D3D3D3;
+  --blurple-1: #7289DA;
+  --blurple-2: #5865F2;
+  --blurple-3: #4E5D94;
+  --black: #000000;
+  --black-dark: #111111;
+  --black-light: #222222;
+  --grey-dark: #333333;
+  --grey-medium: #666666;
+  --grey-light: #999999;
+  --grey-lighter: #CCCCCC;
+  --white: #FFFFFF;
+  /*Backgrounds*/
+  --bg-black-t-1: #00000088;
+  --bg-black-t-2: #00000025;
+  --bg-black-t-3: #00000055;
+  --bg-blurple-g-1: linear-gradient(180deg, #4c6bd5 0%, #232b86 50%, #293665 75%, #000000 100%);
+  --bg-spotify-g-1: linear-gradient(90deg, #00ac1d 0%, #009919 50%, #005a0f 100%);
+  --bg-spotify-g-2: linear-gradient(90deg, #4c6bd5 0%, #232b86 50%, #293665 100%);
+  --bg-white-t-1: #ffffff25;
+  --bg-white-t-2: #ffffff55;
+  --bg-white-t-3: #ffffff88;
+  /*Fontlar*/
+  --poppins: 'Poppins', sans-serif;
+  --baloo: 'Baloo 2', sans-serif;
+  --monospace: 'Courier New', Courier, monospace;
+}
+.dc-status {
+  display: inline-block;
+  width: 12.5px;
+  height: 12.5px;
+  border-radius: 50%;
+  margin-right: -5px;
+  margin-bottom: 10px;
+  background-color: var(--blurple-2); /* Varsayılan renk */
+  transition: background-color 2s ease; 
+}
+
+.dc-status.online {
+  background-color: var(--green-3); /* Çevrimiçi durumu */
+}
+
+.dc-status.idle {
+  background-color: var(--orange-1); /* Boşta durumu */
+}
+
+.dc-status.dnd {
+  background-color: var(--red-3); /* Rahatsız Etmeyin durumu */
+}
+
+.dc-status.offline {
+  background-color: var(--blurple-2); /* Çevrimdışı durumu */
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--poppins);
+  color: var(--white);
+  background: linear-gradient(180deg, 
+  rgba(50, 31, 95, 1.000000) 0%, 
+  rgba(144, 98, 117, 1.000000) 50%, 
+  rgba(144, 98, 117, 1.000000) 60%, 
+  rgba(46, 29, 56, 1.000000) 90%,
+  rgba(0, 0, 0, 1.000000) 100%);
+  background-attachment: fixed;
+}
+header {
+  padding: 30px;
+  background: var(--black);
+  height: 50px;
+}
+
+.sidenav {
+  width: 240px;
+  background-color: var(--black);
+  position:  absolute;
+  height: 93.4vh;
+  padding: 0 30px;
+  left: -100%;
+  transition: all 1s;
+}
+
+.sidenav.active {
+left: 0;
+
+}
+
+
+.hontainer .pfp{
+  --random1: 0.2; /* Rastgele değerler için CSS değişkenleri */
+  --random2: 0.4;
+  --random3: 0.6;
+  --random4: 0.8;
+  --random5: 0.1; /* Rastgele değerler için CSS değişkenleri */
+  --random6: 0.3;
+  --random7: 0.5;
+  --random8: 0.7;
+  border-radius: calc(40% + var(--random1) * 20%) calc(60% - var(--random1) * 20%) calc(60% - var(--random2) * 20%) calc(40% + var(--random2) * 20%) / calc(60% - var(--random3) * 20%) calc(40% + var(--random3) * 20%) calc(40% + var(--random4) * 20%) calc(60% - var(--random4) * 20%);
+  height: 248px;
+  position: relative;
+  margin-top: 15px;
+  animation: blob-animation 2.5s infinite;
+  border:5px solid var(--blurple-2); /* Varsayılan renk */
+  transition: border 2s ease; 
+}
+
+.pfp.online {
+  border:5px solid var(--green-3); /* Çevrimiçi durumu */
+}
+
+.pfp.idle {
+  border:5px solid var(--orange-1); /* Boşta durumu */
+}
+
+.pfp.dnd {
+  border:5px solid var(--red-3); /* Rahatsız Etmeyin durumu */
+}
+
+.pfp.offline {
+  border:5px solid var(--blurple-2); /* Çevrimdışı durumu */
+}
+
+@keyframes blob-animation {
+  0%, 100% {
+    border-radius: calc(40% + var(--random1) * 20%) calc(60% - var(--random1) * 20%) calc(60% - var(--random2) * 20%) calc(40% + var(--random2) * 20%) / calc(60% - var(--random3) * 20%) calc(40% + var(--random3) * 20%) calc(40% + var(--random4) * 20%) calc(60% - var(--random4) * 20%);
+  }
+  12.5% {
+    border-radius: calc(40% + var(--random5) * 20%) calc(60% - var(--random5) * 20%) calc(60% - var(--random6) * 20%) calc(40% + var(--random6) * 20%) / calc(60% - var(--random7) * 20%) calc(40% + var(--random7) * 20%) calc(40% + var(--random8) * 20%) calc(60% - var(--random8) * 20%);
+  }
+  25% {
+    border-radius: calc(40% + var(--random2) * 20%) calc(60% - var(--random2) * 20%) calc(60% - var(--random3) * 20%) calc(40% + var(--random3) * 20%) / calc(60% - var(--random4) * 20%) calc(40% + var(--random4) * 20%) calc(40% + var(--random1) * 20%) calc(60% - var(--random1) * 20%);
+  }
+  37.5% {
+    border-radius: calc(40% + var(--random6) * 20%) calc(60% - var(--random6) * 20%) calc(60% - var(--random7) * 20%) calc(40% + var(--random7) * 20%) / calc(60% - var(--random8) * 20%) calc(40% + var(--random8) * 20%) calc(40% + var(--random5) * 20%) calc(60% - var(--random5) * 20%);
+  }
+  50% {
+    border-radius: calc(40% + var(--random3) * 20%) calc(60% - var(--random3) * 20%) calc(60% - var(--random4) * 20%) calc(40% + var(--random4) * 20%) / calc(60% - var(--random1) * 20%) calc(40% + var(--random1) * 20%) calc(40% + var(--random2) * 20%) calc(60% - var(--random2) * 20%);
+  }
+  62.5% {
+    border-radius: calc(40% + var(--random7) * 20%) calc(60% - var(--random7) * 20%) calc(60% - var(--random8) * 20%) calc(40% + var(--random8) * 20%) / calc(60% - var(--random5) * 20%) calc(40% + var(--random5) * 20%) calc(40% + var(--random6) * 20%) calc(60% - var(--random6) * 20%);
+  }
+  75% {
+    border-radius: calc(40% + var(--random4) * 20%) calc(60% - var(--random4) * 20%) calc(60% - var(--random1) * 20%) calc(40% + var(--random1) * 20%) / calc(60% - var(--random2) * 20%) calc(40% + var(--random2) * 20%) calc(40% + var(--random3) * 20%) calc(60% - var(--random3) * 20%);
+  }
+  87.5% {
+    border-radius: calc(40% + var(--random8) * 20%) calc(60% - var(--random8) * 20%) calc(60% - var(--random5) * 20%) calc(40% + var(--random5) * 20%) / calc(60% - var(--random6) * 20%) calc(40% + var(--random6) * 20%) calc(40% + var(--random7) * 20%) calc(60% - var(--random7) * 20%);
+  }
+}
+
+
+.hontainer h1{
+padding-top: 15px;
+font-size: 45px;
+}
+
+.hontainer{
+  background: var(--bg-black-t-1); /* Arka plan rengi */
+  color: var(--white);
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 5%; /* Üstten 10 santimetre boşluk */
+  margin-bottom: 5%; /* Üstten 10 santimetre boşluk */
+}
+.about,
+.home,
+.contact {
+  text-align: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.a-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 18px;
+  background-color: var(--bg-white-t-1);
+  color: var(--blurple-1);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* Hover efekti */
+.a-btn:hover {
+  background-color: var(--bg-white-t-2);
+}
+
+/* Aktif durum */
+.a-btn:active {
+  background-color: var(--bg-white-t-3);
+}
+
+@keyframes heart {
+  0% { transform: scale(.85) }
+  5% { transform: scale(1) }
+ 39% { transform: scale(.75) }
+ 45% { transform: scale(.9) }
+ 60% { transform: scale(.85) }
+100% { transform: scale(.8) }
+}
+.heart > div {
+animation: heart 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+transform-origin: 100px 100px;
+}
+.heart > div div {
+top: 72px;
+left: 60px;
+position: absolute;
+width: 80px;
+height: 80px;
+background: #b384ff;
+transform: rotate(45deg);
+filter: blur(5px);
+}
+.heart > div div:after, .heart > div div:before {
+content: " ";
+position: absolute;
+display: block;
+width: 80px;
+height: 80px;
+background: #b384ff;
+filter: blur(5px);
+}
+.heart > div div:before {
+left: -52px;
+border-radius: 50% 0 0 50%;
+}
+.heart > div div:after {
+top: -52px;
+border-radius: 50% 50% 0 0;
+} 
+.zuzia-heart {
+width: 200px;
+height: 200px;
+display: inline-block;
+overflow: hidden;
+}
+.heart {
+width: 100%;
+height: 100%;
+position: relative;
+transform: translateZ(0) scale(1);
+backface-visibility: hidden;
+transform-origin: 0 0;
+}
+.heart div { box-sizing: content-box; }
+
+.zuzia-heart, .heart {
+  position: absolute; /* Konumu mutlak yap */
+  top: 50%; /* Üst kenardan yarıya kadar konumlandır */
+  left: 50%; /* Sol kenardan yarıya kadar konumlandır */
+  transform: translate(-50%, -50%); /* Tam olarak merkeze al */
+}
+
+
+.spotify-card {
+  display: flex;
+  align-items: center;
+  background: var(--bg-spotify-g-1);
+  color: white;
+  width: 450px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  position: relative;
+}
+.spotify-card-off {
+  display: flex;
+  align-items: center;
+  background: var(--bg-spotify-g-2);
+  color: white;
+  width: 450px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.album-cover img {
+  height: 90px;
+  width: 90px;
+  margin-right: 10px;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+.song-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  align-items: start;
+}
+.song-info .song {
+  text-align: start;
+  margin: 1px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.song-info p {
+  margin: 1px;
+  font-size: 13px;
+}
+
+.controls {
+  right: 740px;
+  cursor: pointer;
+}
+.controls a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+@media only screen and (max-width:780px){
+  .hontainer .pfp{
+    height: 125px;
+  }
+  .hontainer h1{
+    padding-top: 15px;
+    font-size: 35px;
+    }
+.hontainer.home{
+  margin-top: 5%;
+}
+.hontainer.contact{
+  margin-top: 5%;
+}
+.hontainer.about{
+  margin-top: 5%;
+}
+  .spotify-card {
+    display: flex;
+    align-items: center;
+    background: var(--bg-spotify-g-1);
+    color: white;
+    width: 100%; /* Mobil uyum için genişlik 100% */
+    max-width: 450px; /* Maksimum genişlik ayarı */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+  }
+  
+  .spotify-card-off {
+    display: flex;
+    align-items: center;
+    background: var(--bg-spotify-g-2);
+    color: white;
+    width: 100%; /* Mobil uyum için genişlik 100% */
+    max-width: 450px; /* Maksimum genişlik ayarı */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+  }
+  
+  .album-cover img {
+    height: 90px;
+    width: 90px;
+    margin-right: 10px;
+    opacity: 0.9;
+    border-radius: 10px;
+  }
+  .song-info .song {
+    margin: 1px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+  
+  .song-info p {
+    margin: 1px;
+    font-size: 13px;
+  }
+  
+  .controls {
+    right: 35px; /* Sağdan 0 piksel uzaklıkta */
+    cursor: pointer;
+  }
+  
+  .controls a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  }
